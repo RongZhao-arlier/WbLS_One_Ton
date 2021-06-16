@@ -1,0 +1,14 @@
+/glg4debug/glg4param omit_muon_processes 1.0
+/glg4debug/glg4param omit_hadronic_processes 1.0
+
+/run/initialize
+
+/process/activate Cerenkov
+
+/vis/open HepRepFile
+/vis/scene/create
+/vis/scene/add/volume
+/vis/sceneHandler/attach
+/vis/scene/add/trajectories
+/vis/scene/add/hits
+/tracking/storeTrajectory 1

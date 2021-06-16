@@ -1,0 +1,223 @@
+{
+name: "PMT",
+index: "r7723",
+valid_begin: [0,0],
+valid_end: [0,0],
+
+construction: "toroidal",
+
+dynode_material: "stainless_steel",
+glass_material: "glass",
+pmt_vacuum_material: "pmt_vacuum", // dilute air
+photocathode_surface: "photocathode_r7723",
+mirror_surface: "mirror",
+dynode_surface: "stainless_steel",
+
+dynode_radius: 20.0, // mm guess
+dynode_top:   -30.0, // mm guess
+wall_thickness: 3.0, // mm guess
+
+z_edge:   [4.00, 1.00, 0.00, -16.75, -30.00, -32.00, -108.00], // total length is 112 mm, must have equator 0.0
+rho_edge: [26.00, 26.00, 26.00,  26.00, 26.00, 26.00, 26.00],  // glass 52 mm, cathod 46 mm
+z_origin: [-10000.00, 0.00, 0.00,  10000.00, 31.00, 0.00],  // must be len(z_edge) - 1
+
+}
+
+{
+name: "PMT",
+index: "r7723_S0",
+valid_begin: [0,0],
+valid_end: [0,0],
+
+construction: "toroidal",
+
+dynode_material: "stainless_steel",
+glass_material: "glass",
+pmt_vacuum_material: "pmt_vacuum", // dilute air
+photocathode_surface: "photocathode_r7723_S0",
+mirror_surface: "mirror",
+dynode_surface: "stainless_steel",
+
+dynode_radius: 20.0, // mm guess
+dynode_top:   -30.0, // mm guess
+wall_thickness: 3.0, // mm guess
+
+z_edge:   [4.00, 1.00, 0.00, -16.75, -30.00, -32.00, -108.00], // total length is 112 mm, must have equator 0.0
+rho_edge: [26.00, 26.00, 26.00,  26.00, 26.00, 26.00, 26.00],  // glass 52 mm, cathod 46 mm
+z_origin: [-10000.00, 0.00, 0.00,  10000.00, 31.00, 0.00],  // must be len(z_edge) - 1
+
+}
+
+{
+name: "PMT",
+index: "r7723_S1",
+valid_begin: [0,0],
+valid_end: [0,0],
+
+construction: "toroidal",
+
+dynode_material: "stainless_steel",
+glass_material: "glass",
+pmt_vacuum_material: "pmt_vacuum", // dilute air
+photocathode_surface: "photocathode_r7723_S1",
+mirror_surface: "mirror",
+dynode_surface: "stainless_steel",
+
+dynode_radius: 20.0, // mm guess
+dynode_top:   -30.0, // mm guess
+wall_thickness: 3.0, // mm guess
+
+z_edge:   [4.00, 1.00, 0.00, -16.75, -30.00, -32.00, -108.00], // total length is 112 mm, must have equator 0.0
+rho_edge: [26.00, 26.00, 26.00,  26.00, 26.00, 26.00, 26.00],  // glass 52 mm, cathod 46 mm
+z_origin: [-10000.00, 0.00, 0.00,  10000.00, 31.00, 0.00],  // must be len(z_edge) - 1
+
+}
+
+{
+name: "PMT",
+index: "r7723_S2",
+valid_begin: [0,0],
+valid_end: [0,0],
+
+construction: "toroidal",
+
+dynode_material: "stainless_steel",
+glass_material: "glass",
+pmt_vacuum_material: "pmt_vacuum", // dilute air
+photocathode_surface: "photocathode_r7723_S2",
+mirror_surface: "mirror",
+dynode_surface: "stainless_steel",
+
+dynode_radius: 20.0, // mm guess
+dynode_top:   -30.0, // mm guess
+wall_thickness: 3.0, // mm guess
+
+z_edge:   [4.00, 1.00, 0.00, -16.75, -30.00, -32.00, -108.00], // total length is 112 mm, must have equator 0.0
+rho_edge: [26.00, 26.00, 26.00,  26.00, 26.00, 26.00, 26.00],  // glass 52 mm, cathod 46 mm
+z_origin: [-10000.00, 0.00, 0.00,  10000.00, 31.00, 0.00],  // must be len(z_edge) - 1
+}
+
+{
+name: "PMT",
+index: "r7723_S3",
+valid_begin: [0,0],
+valid_end: [0,0],
+
+construction: "toroidal",
+
+dynode_material: "stainless_steel",
+glass_material: "glass",
+pmt_vacuum_material: "pmt_vacuum", // dilute air
+photocathode_surface: "photocathode_r7723_S3",
+mirror_surface: "mirror",
+dynode_surface: "stainless_steel",
+
+dynode_radius: 20.0, // mm guess
+dynode_top:   -30.0, // mm guess
+wall_thickness: 3.0, // mm guess
+
+z_edge:   [4.00, 1.00, 0.00, -16.75, -30.00, -32.00, -108.00], // total length is 112 mm, must have equator 0.0
+rho_edge: [26.00, 26.00, 26.00,  26.00, 26.00, 26.00, 26.00],  // glass 52 mm, cathod 46 mm
+z_origin: [-10000.00, 0.00, 0.00,  10000.00, 31.00, 0.00],  // must be len(z_edge) - 1
+
+}
+
+{
+name: "PMT",
+index: "r7723_S4",
+valid_begin: [0,0],
+valid_end: [0,0],
+
+construction: "toroidal",
+
+dynode_material: "stainless_steel",
+glass_material: "glass",
+pmt_vacuum_material: "pmt_vacuum", // dilute air
+photocathode_surface: "photocathode_r7723_S4",
+mirror_surface: "mirror",
+dynode_surface: "stainless_steel",
+
+dynode_radius: 20.0, // mm guess
+dynode_top:   -30.0, // mm guess
+wall_thickness: 3.0, // mm guess
+
+z_edge:   [4.00, 1.00, 0.00, -16.75, -30.00, -32.00, -108.00], // total length is 112 mm, must have equator 0.0
+rho_edge: [26.00, 26.00, 26.00,  26.00, 26.00, 26.00, 26.00],  // glass 52 mm, cathod 46 mm
+z_origin: [-10000.00, 0.00, 0.00,  10000.00, 31.00, 0.00],  // must be len(z_edge) - 1
+
+}
+
+{
+name: "PMT",
+index: "r7723_S5",
+valid_begin: [0,0],
+valid_end: [0,0],
+
+construction: "toroidal",
+
+dynode_material: "stainless_steel",
+glass_material: "glass",
+pmt_vacuum_material: "pmt_vacuum", // dilute air
+photocathode_surface: "photocathode_r7723_S5",
+mirror_surface: "mirror",
+dynode_surface: "stainless_steel",
+
+dynode_radius: 20.0, // mm guess
+dynode_top:   -30.0, // mm guess
+wall_thickness: 3.0, // mm guess
+
+z_edge:   [4.00, 1.00, 0.00, -16.75, -30.00, -32.00, -108.00], // total length is 112 mm, must have equator 0.0
+rho_edge: [26.00, 26.00, 26.00,  26.00, 26.00, 26.00, 26.00],  // glass 52 mm, cathod 46 mm
+z_origin: [-10000.00, 0.00, 0.00,  10000.00, 31.00, 0.00],  // must be len(z_edge) - 1
+
+}
+
+{
+name: "PMT",
+index: "r7723_S6",
+valid_begin: [0,0],
+valid_end: [0,0],
+
+construction: "toroidal",
+
+dynode_material: "stainless_steel",
+glass_material: "glass",
+pmt_vacuum_material: "pmt_vacuum", // dilute air
+photocathode_surface: "photocathode_r7723_S6",
+mirror_surface: "mirror",
+dynode_surface: "stainless_steel",
+
+dynode_radius: 20.0, // mm guess
+dynode_top:   -30.0, // mm guess
+wall_thickness: 3.0, // mm guess
+
+z_edge:   [4.00, 1.00, 0.00, -16.75, -30.00, -32.00, -108.00], // total length is 112 mm, must have equator 0.0
+rho_edge: [26.00, 26.00, 26.00,  26.00, 26.00, 26.00, 26.00],  // glass 52 mm, cathod 46 mm
+z_origin: [-10000.00, 0.00, 0.00,  10000.00, 31.00, 0.00],  // must be len(z_edge) - 1
+
+}
+
+{
+name: "PMT",
+index: "r7723_S7",
+valid_begin: [0,0],
+valid_end: [0,0],
+
+construction: "toroidal",
+
+dynode_material: "stainless_steel",
+glass_material: "glass",
+pmt_vacuum_material: "pmt_vacuum", // dilute air
+photocathode_surface: "photocathode_r7723_S7",
+mirror_surface: "mirror",
+dynode_surface: "stainless_steel",
+
+dynode_radius: 20.0, // mm guess
+dynode_top:   -30.0, // mm guess
+wall_thickness: 3.0, // mm guess
+
+z_edge:   [4.00, 1.00, 0.00, -16.75, -30.00, -32.00, -108.00], // total length is 112 mm, must have equator 0.0
+rho_edge: [26.00, 26.00, 26.00,  26.00, 26.00, 26.00, 26.00],  // glass 52 mm, cathod 46 mm
+z_origin: [-10000.00, 0.00, 0.00,  10000.00, 31.00, 0.00],  // must be len(z_edge) - 1
+
+}

@@ -1,0 +1,47 @@
+/rat/db/set DETECTOR experiment "wbls1ton"
+/rat/db/set DETECTOR geo_file "wbls1ton.geo"
+/rat/db/set DAQ noise_flag 0
+#/random/setSeeds 1000 1000
+/PhysicsList/setOpWLS g4
+/run/initialize
+/tracking/storeTrajectory 0
+/tracking/storeParticleTrajectory nu_e
+/tracking/storeParticleTrajectory anti_nu_e
+/tracking/storeParticleTrajectory nu_mu
+/tracking/storeParticleTrajectory anti_nu_mu
+# BEGIN EVENT LOOP
+/rat/proc simpledaq
+/rat/proc count
+/rat/procset update 1
+/rat/proc fitcentroid
+#/rat/proc prune
+#/rat/procset prune "mc.track:opticalphoton"
+/rat/proclast outroot
+/rat/procset file "scint3_out.root"
+#/rat/procset file "cosmic_20180827_HodoEvents_10k_run102.root"
+#/generator/add external external:poisson: "cosmic_20180827_HodoEvents_10k_run102.dat" 
+/generator/add external external:poisson: "scint_3.dat" 
+
+#/generator/add combo gun:point
+#/generator/add combo gun:fill
+#/generator/add combo gun:fill:poisson
+#/generator/vtx/set 0 0 0 1.0
+#/generatot/pos/set 0 0 0
+#/generator/rate/set 1.0
+#/generator/vtx/set opticalphoton 0 0 -0.000002484
+#/generator/vtx/set opticalphoton 0 0 -0.000003105
+#/generator/vtx/set opticalphoton 0 0 -0.00000414
+#/generator/pos/set 381.35 -30.793 787.7  #S0
+#/generator/pos/set 131.35 -30.793 787.7  #S1
+#/generator/pos/set -118.65 -30.793 787.7  #S2
+#/generator/pos/set -368.65 -30.793 787.7  #S3
+#/generator/pos/set 381.35 169.21 787.7  #S6
+#/generator/pos/set 131.35 169.21 787.7  #S7
+#/generator/pos/set 381.35 -30.793 -503.4  #center of acrylic lid
+#/generator/pos/set 0 0 787.7  #center of acrylic lid
+#/PMTOpticalModel/verbose 0
+#/run/verbose 2
+#/event/verbose 3
+#/tracking/verbose 2
+/run/beamOn 500
+#/control/execute test.mac

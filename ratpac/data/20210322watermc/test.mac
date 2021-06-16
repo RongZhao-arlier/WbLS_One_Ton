@@ -1,0 +1,79 @@
+#set the detector parameters
+#/control/verbose 2
+#/control/saveHistory
+#/run/verbose 2
+
+#/rat/db/set DETECTOR experiment "wbls1ton"
+#/rat/db/set DETECTOR detector_factory "wbls1ton"
+#/rat/db/set DETECTOR geo_file "wbls1ton.geo"
+#/PhysicsList/setOpWLS g4
+
+#/run/initialize
+
+#initialize the visualizer
+#/vis/open HepRepFile
+#/vis/open OGL 600x600
+#/vis/open OGL 
+#/vis/open OGLSQt
+/vis/open OGLSQt
+#/vis/open OGLIX
+#/vis/open VRML2FILE
+#/vis/viewer/set/autoRefresh false
+/vis/verbose errors
+
+/vis/scene/create
+/vis/scene/add/volume
+#/vis/scene/add/trajectories
+#/vis/scene/endOfEventAction accumulate 1
+/vis/drawVolume
+#
+/vis/viewer/set/viewpointVector 0.0 1 0.0
+/vis/viewer/zoom 1.0
+/vis/viewer/set/upVector 0 0 1
+#/vis/viewer/add/trajectories smooth
+/vis/scene/add/trajectories smooth
+#/vis/modeling/trajectories/create/drawByCharge
+#
+#/vis/modeling/trajectories/drawByCharge-0/default/setDrawStepPts true
+#/vis/modeling/trajectories/drawByCharge-0/default/setStepPtsSize 2
+/vis/modeling/trajectories/create/drawByCharge
+/vis/modeling/trajectories/drawByCharge-0/default/setDrawStepPts true
+/vis/modeling/trajectories/drawByCharge-0/default/setStepPtsSize 2
+
+/vis/scene/add/hits
+
+/vis/scene/endOfEventAction accumulate
+/tracking/FillPointCont True
+
+#/generator/add combo gun:point:poisson
+#/generator/add external external:poisson: "cosmic_20180827_HodoEvents_10k_run102.dat" 
+#/generator/add combo gun:fill:poisson
+#/generator/vtx/set 0 0  1.0
+#/generator/pos/set 0 0 0
+#/generator/rate/set 1.0
+#/generator/vtx/set mu+ 0 0 -.0414
+#/generator/vtx/set opticalphoton 0 0 -0.00000414
+#/generator/pos/set 381.35 -30.793 987.7  #center of acrylic lid
+#/generator/pos/set 381.35 -30.793 787.7  #center of acrylic lid
+#/generator/pos/set 0 0 787.7  #center of acrylic lid
+#/generator/rate/set 100
+
+#/Qtracking/storeTrajectory 1
+/run/verbose 2
+/event/verbose 3
+/tracking/verbose 2
+
+# BEGIN EVENT LOOP
+#/run/beamOn 3
+#/vis/reviewKeptEvents
+
+#/vis/viewer/set/autoRefresh true
+/vis/verbose warnings
+
+
+#END EVENT LOOP
+
+/vis/viewer/refresh
+/vis/viewer/flush
+
+#/vis/ogl/printEPS

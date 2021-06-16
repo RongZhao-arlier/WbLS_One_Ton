@@ -1,0 +1,56 @@
+/rat/db/set DETECTOR experiment "20210123watermc"
+#/rat/db/set DETECTOR experiment "onetonmc"
+/rat/db/set DETECTOR geo_file "onetonmc.geo"
+/rat/db/set DAQ noise_flag 0
+#/random/setSeeds 1000 1000
+/PhysicsList/setOpWLS g4
+/run/initialize
+#/tracking/storeTrajectory 0
+#/tracking/storeParticleTrajectory nu_e
+#/tracking/storeParticleTrajectory anti_nu_e
+#/tracking/storeParticleTrajectory nu_mu
+#/tracking/storeParticleTrajectory anti_nu_mu
+# BEGIN EVENT LOOP
+/rat/proc simpledaq
+/rat/proc count
+/rat/procset update 500
+#/rat/proc fitcentroid
+#/rat/proc prune
+#/rat/procset prune "mc.track:opticalphoton"
+#/rat/proclast outroot
+#/rat/procset file "cosmic_20180827_HodoEvents_10k_run102.root"
+#/generator/add external external:poisson: "cosmic_20180827_HodoEvents_10k_run102.dat" 
+/generator/add combo gun:point
+#/generator/add combo gun:fill
+#/generator/add combo gun:fill:poisson
+#/generator/vtx/set 0 0 0 1.0
+#/generatot/pos/set 0 0 0
+#/generator/rate/set 1.0
+/generator/vtx/set opticalphoton 0 0 -0.000003105
+#/generator/vtx/set opticalphoton 0.0000002706 0 -0.000003093
+#/generator/vtx/set opticalphoton 0.000001552 0 -0.000002689
+#/generator/vtx/set opticalphoton 0 0 -0.000003105
+#/generator/vtx/set opticalphoton 0 0 -0.00000414
+#/generator/pos/set 381.35 -30.793 87.7  #S0
+/generator/pos/set 131.35 -30.793 -502.4  #S1
+#/generator/pos/set 131.35 -30.793 87.7  #S1
+#/generator/pos/set 0. -30.793 -256.8  #S1
+#/generator/pos/set 121. -30.793 -256.8  #S1
+#/generator/pos/set -118.65 -30.793 87.7  #S2
+#/generator/pos/set -368.65 -30.793 87.7  #S3
+#/generator/pos/set 381.35 169.21 787.7  #S6
+#/generator/pos/set 131.35 169.21 787.7  #S7
+#/generator/pos/set 381.35 -30.793 -503.4  #center of acrylic lid
+#/generator/pos/set 131.35 -30.793 -503.4  #s1
+#/generator/pos/set -118.65 -30.793 -503.4  #s2
+#/generator/pos/set -368.65 -30.793 -503.4  #s3
+#/generator/pos/set 381.35 169.21 -503.4  #s6
+#/generator/pos/set 131.35 169.21 -503.4  #s7
+#/generator/pos/set 0 0 787.7  #center of acrylic lid
+#/PMTOpticalModel/verbose 2
+#/PMTOpticalModel/luxlevel 1
+#/run/verbose 2
+#/event/verbose 3
+#/tracking/verbose 2
+#/run/beamOn 10000
+/control/execute test.mac
