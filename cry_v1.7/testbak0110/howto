@@ -1,0 +1,31 @@
+this is a simple how to about runing cry generator
+
+20180821
+
+Aiwu:
+
+1. edit src/CRYUtils.cc, change the random number: 
+    next=next*1103515245+1000;//was 123345
+  I start with 1000, add 1 each time when generating some number of events
+  each time I want to generate 10k hodo tirgger events (by calculating the track angles to ensure that the track can make an (H0 || H2) && (H1 || H3)
+
+2. type make under the cry's root directory
+   don't worry about the error messages because that comes from running one test script, I didn't try to remove that test ....
+
+3. currently I use "test/testRatVector_v3_1mSize_allAngles.cc" to generate hodoTrig events, each run will generate 100k events.
+
+4. "make testRatVector_v3_1mSize_allAngles" under test/ folder will compile this script
+
+5. ./testRatVector_v3_1mSize_allAngles setupBNL1T.file 100000000 cosmic_event_100kEvts.dat cosmic_event_100kEvts_time.dat
+
+    the above command will generate events, bear in mind to change setupBNL1T.file
+    100000000 indicates number of events to run, I need to put a large number, and inside the program it will stop when 100k hodo events are reached.
+    filenames contain event information and time information
+
+    everytime when random number is changed, testRatVector_v3_1msize_allAngles needs to be re-compiled! Otherwise the random number effect is not reflected.
+
+just add the filename (testRatVector for example) in Makefile
+
+then "make testRatVector" will do it
+
+change random number in 
